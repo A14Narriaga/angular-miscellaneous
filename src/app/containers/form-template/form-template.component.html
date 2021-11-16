@@ -1,0 +1,83 @@
+<h5>Template</h5>
+<hr />
+<form (ngSubmit)="saveFormTemp(formTemp)" #formTemp="ngForm">
+  <div class="mb-3">
+    <!-- Name -->
+    <label for="name" class="form-label">Name</label>
+    <input
+      type="text"
+      id="name"
+      placeholder="Name"
+      class="form-control"
+      #name="ngModel"
+      [class.is-invalid]="name.invalid && name.touched"
+      [ngModel]="user.name"
+      name="nombre"
+      minlength="3"
+      required
+    />
+    <small *ngIf="name.invalid && name.touched" class="form-text text-danger"
+      >Write at least 3 letters.</small
+    >
+  </div>
+  <!-- Email -->
+  <div class="mb-3">
+    <label for="lastName" class="form-label">Email</label>
+    <input
+      type="email"
+      id="email"
+      placeholder="example@example.com"
+      class="form-control"
+      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+      [ngModel]="user.email"
+      name="email"
+      #email="ngModel"
+      [class.is-invalid]="email.invalid && email.touched"
+      required
+    />
+    <small *ngIf="email.invalid && email.touched" class="form-text text-danger"
+      >The email is required.</small
+    >
+  </div>
+  <!-- Country -->
+  <div class="mb-3">
+    <label for="countries" class="form-label">Country</label>
+    <select
+      class="form-control"
+      id="countries"
+      [ngModel]="user.country"
+      [disabled]="countries.length === 0"
+      name="countries"
+      #country="ngModel"
+      required
+      [class.is-invalid]="country.invalid && country.touched"
+    >
+      <option *ngFor="let country of countries" [value]="country.code">
+        {{ country.name }}
+      </option>
+    </select>
+    <small
+      *ngIf="country.invalid && country.touched"
+      class="form-text text-danger"
+      >Select a country.</small
+    >
+  </div>
+  <!-- Radio -->
+  <div class="mb-3 row">
+    <label for="countries" class="form-label">Gender</label>
+    <div class="col">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" />
+        <label for="" class="form-check-lable">Male</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" />
+        <label for="" class="form-check-lable">Female</label>
+      </div>
+    </div>
+  </div>
+  <!-- Button -->
+  <div class="d-grid gap-2 mb-5">
+    <button class="btn btn-outline-primary" type="submit">Save</button>
+  </div>
+</form>

@@ -1,0 +1,44 @@
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { CountriesService } from '../../services/countries.service';
+
+@Component({
+  selector: 'app-form-template',
+  templateUrl: './form-template.component.html',
+  styleUrls: ['./form-template.component.sass']
+})
+export class FormTemplateComponent implements OnInit {
+
+  user = {
+    name: '',
+    email: '',
+    country: ''
+  }
+
+  countries: any[] = []
+
+  constructor(
+    private countriesService: CountriesService
+  ) { }
+
+  ngOnInit(): void {
+    this.countriesService.getCountries()
+      .subscribe(countries => {
+        this.countries = countries
+        this.countries.unshift({
+          name: 'Select a country...',
+          code: ''
+        })
+      }
+      )
+  }
+
+  saveFormTemp = (form: NgForm) => {
+    console.log(form.value);
+    if (form.invalid) {
+      Object.values(form.controls).forEach(control =>
+        control.markAsTouched())
+    }
+  }
+
+}
