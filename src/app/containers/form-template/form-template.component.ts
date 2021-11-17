@@ -10,9 +10,10 @@ import { CountriesService } from '../../services/countries.service';
 export class FormTemplateComponent implements OnInit {
 
   user = {
-    name: '',
-    email: '',
-    country: ''
+    name: 'Alan Arriaga',
+    email: 'a14n.arriaga@gmail.com',
+    country: 'MX',
+    gender: 'M'
   }
 
   countries: any[] = []
@@ -34,7 +35,6 @@ export class FormTemplateComponent implements OnInit {
   }
 
   saveFormTemp = (form: NgForm) => {
-    console.log(form.value);
     if (form.invalid) {
       Object.values(form.controls).forEach(control =>
         control.markAsTouched())
