@@ -1,20 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormTemplateComponent } from './containers/form-template/form-template.component';
-import { FormReactiveComponent } from './containers/form-reactive/form-reactive.component';
+import { ErrorPageComponent } from './shared/error-page/error-page.component';
 
 const routes: Routes = [
   {
-    path: 'template',
-    component: FormTemplateComponent
-  },
-  {
-    path: 'reactive',
-    component: FormReactiveComponent
+    path: 'forms',
+    loadChildren: () => import('./formTypes/formTypes.module').then(m => m.FormsTypesModule)
   },
   {
     path: '**',
-    redirectTo: 'reactive'
+    redirectTo: 'forms'
   }
 ];
 
@@ -22,4 +17,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

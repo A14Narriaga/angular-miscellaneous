@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ValidatorsService } from '../../services/validators.service';
+import { ValidatorsService } from '../../../services/validators.service';
 
 @Component({
   selector: 'app-form-reactive',
