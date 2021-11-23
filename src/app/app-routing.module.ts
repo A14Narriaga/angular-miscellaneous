@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ErrorPageComponent } from './shared/error-page/error-page.component';
 
 const routes: Routes = [
   {
     path: 'forms',
-    loadChildren: () => import('./formTypes/formTypes.module').then(m => m.FormsTypesModule)
+    loadChildren: () => import('./pages/form-types/form-types.module').then(m => m.FormTypesModule)
   },
   {
     path: '**',

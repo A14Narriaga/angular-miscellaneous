@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ValidatorsService } from '../../../services/validators.service';
+import { ValidatorsService } from '../../../../services/validators.service';
 
 @Component({
-  selector: 'app-form-reactive',
-  templateUrl: './form-reactive.component.html',
-  styleUrls: ['./form-reactive.component.sass']
+  selector: 'app-basics',
+  templateUrl: './basics.component.html',
+  styleUrls: ['./basics.component.sass']
 })
-export class FormReactiveComponent implements OnInit {
+export class BasicsComponent implements OnInit {
 
   formGroup!: FormGroup;
 

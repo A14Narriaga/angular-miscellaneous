@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { CountriesService } from '../../../services/countries.service';
+import { CountriesService } from '../../../../services/countries.service';
 
 @Component({
-  selector: 'app-form-template',
-  templateUrl: './form-template.component.html',
-  styleUrls: ['./form-template.component.sass']
+  selector: 'app-basics',
+  templateUrl: './basics.component.html',
+  styleUrls: ['./basics.component.sass']
 })
-export class FormTemplateComponent implements OnInit {
+export class BasicsComponent implements OnInit {
 
   user = {
     name: 'Alan Arriaga',
@@ -40,5 +40,4 @@ export class FormTemplateComponent implements OnInit {
         control.markAsTouched())
     }
   }
-
 }

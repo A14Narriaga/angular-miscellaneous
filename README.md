@@ -12,7 +12,7 @@
 
 ## Angular CLI
 
-- Generate module
+- Generate modules
 ```
-npx ng g m <name>
+npx ng g m [name] --routing
 ```
