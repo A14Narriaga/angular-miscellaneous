@@ -1,15 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { FormTypesRoutingModule } from './form-types-routing.module'
 
-import { FormTypesComponent } from './form-types.component';
-import { FormTypesRoutingModule } from './form-types-routing.module';
-import { SidenavComponent } from './sidenav/sidenav.component';
+import { FormTypesComponent } from './form-types.component'
+import { SidenavComponent } from './components/sidenav/sidenav.component'
 
 @NgModule({
-  declarations: [FormTypesComponent, SidenavComponent],
-  imports: [
-    CommonModule,
-    FormTypesRoutingModule,
-  ]
+	declarations: [FormTypesComponent, SidenavComponent],
+	imports: [CommonModule, FormTypesRoutingModule],
 })
-export class FormTypesModule { }
+export class FormTypesModule {}

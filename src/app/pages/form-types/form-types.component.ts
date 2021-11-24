@@ -1,27 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
-  selector: 'app-form-types',
-  template: `
-  
-    <div class="row">
-      <div class="col-4">
-        <app-sidenav></app-sidenav>
-      </div>
-      <div class="col mt-4">
-        <router-outlet></router-outlet>
-      </div>
-    </div>
-
-  `,
-  styleUrls: []
+	selector: 'app-form-types',
+	template: `
+		<section class="d-flex">
+			<app-sidenav></app-sidenav>
+			<div class="container p-4">
+				<router-outlet></router-outlet>
+			</div>
+		</section>
+	`,
+	styleUrls: [],
 })
-
 export class FormTypesComponent implements OnInit {
+	constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+	ngOnInit(): void {}
 }
