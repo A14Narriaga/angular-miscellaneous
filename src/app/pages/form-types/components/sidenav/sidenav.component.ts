@@ -15,15 +15,30 @@ export class SidenavComponent {
   menuItems: MenuItem[] = [
     {
       text: 'Basic',
-      route: './template/basics'
+      route: './template/'
     },
     {
       text: 'Dinamic',
-      route: './template/dinamic'
+      route: './template/dinamics'
     },
     {
       text: 'Switches',
       route: './template/switches'
+    },
+  ]
+
+  menuItems2: MenuItem[] = [
+    {
+      text: 'Basic',
+      route: './reactive/'
+    },
+    {
+      text: 'Dinamic',
+      route: './reactive/dinamics'
+    },
+    {
+      text: 'Switches',
+      route: './reactive/switches'
     },
   ]
 

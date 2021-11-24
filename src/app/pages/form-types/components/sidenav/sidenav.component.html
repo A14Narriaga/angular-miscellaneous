@@ -1,48 +1,27 @@
 <section id="sidenav">
-	<h3>Template</h3>
+	<h4>Template</h4>
 	<hr />
 	<ul class="list-group">
 		<li
-			routerLink="template/basics"
+			*ngFor="let item of menuItems"
+			[routerLink]="item.route"
 			[routerLinkActiveOptions]="{ exact: true }"
 			routerLinkActive="active"
 			class="list-group-item">
-			Basics
-		</li>
-		<li
-			routerLink="template/dinamics"
-			routerLinkActive="active"
-			class="list-group-item">
-			Dinamics
-		</li>
-		<li
-			routerLink="template/switches"
-			routerLinkActive="active"
-			class="list-group-item">
-			Switches
+			{{ item.text }}
 		</li>
 	</ul>
-  <br>
-  <h3>Reactive</h3>
+	<br />
+	<h4>Reactive</h4>
 	<hr />
 	<ul class="list-group">
 		<li
-			routerLink="reactive/basics"
+			*ngFor="let item of menuItems2"
+			[routerLink]="item.route"
+			[routerLinkActiveOptions]="{ exact: true }"
 			routerLinkActive="active"
 			class="list-group-item">
-			Basics
-		</li>
-		<li
-			routerLink="reactive/dinamics"
-			routerLinkActive="active"
-			class="list-group-item">
-			Dinamics
-		</li>
-		<li
-			routerLink="reactive/switches"
-			routerLinkActive="active"
-			class="list-group-item">
-			Switches
+			{{ item.text }}
 		</li>
 	</ul>
 </section>

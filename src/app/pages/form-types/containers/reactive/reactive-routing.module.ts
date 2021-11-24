@@ -9,7 +9,7 @@ const routes: Routes = [
     path: '',
     children: [
       {
-        path: 'basics',
+        path: '',
         component: BasicsComponent
       },
       {
