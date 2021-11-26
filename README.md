@@ -101,7 +101,7 @@ npm i --global prettier
 ```
 
 ## Typescript interfaces
-- [Quicktype](https://app.quicktype.io/)
+[Quicktype](https://app.quicktype.io/)
 ![Quicktype configuration](./_readme/img/quicktypeConfig.png)
 
 ## Deploy to GitHub Pages
