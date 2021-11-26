@@ -78,6 +78,22 @@ npm i
   />
 ```
 
+## PrimeNG
+- [Setup](https://primefaces.org/primeng/showcase/#/setup)
+```
+npm install primeng --save
+npm install primeicons --save
+```
+- angular.json
+```
+"styles": [
+	"src/styles.sass",
+	"node_modules/primeicons/primeicons.css",
+	"node_modules/primeng/resources/themes/vela-blue/theme.css",
+	"node_modules/primeng/resources/primeng.min.css"
+],
+```
+
 ## Prettier
 ```
 npm i --global prettier
