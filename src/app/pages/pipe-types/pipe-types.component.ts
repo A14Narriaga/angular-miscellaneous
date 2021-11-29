@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core'
 import { MenuItem } from 'primeng/api'
+import { PrimeNGConfig } from 'primeng/api'
 
 @Component({
 	selector: 'app-pipe-types',
 	template: `
-		<div class="wrapper">
+		<div class="wrapper mb-3">
 			<p-tabMenu
-				class="options"
 				[model]="items"
 				[activeItem]="activeItem"></p-tabMenu>
 		</div>
-		<section class="container">
-			<router-outlet></router-outlet>
-		</section>
+		<router-outlet></router-outlet>
 	`,
 	styles: [
 		`
@@ -20,12 +18,12 @@ import { MenuItem } from 'primeng/api'
       background-color: var(--surface-a)
       padding: 0.5rem 0 1rem 0
       border-radius: 0.3rem
-      .options
-        display: flex
-        justify-content: center
-    .container
-      max-width: 1024px
-      margin: 0 auto
+      display: flex
+      justify-content: center
+      align-items: center
+      overflow-x: scroll
+      &::-webkit-scrollbar
+        display: none
   `,
 	],
 })
@@ -33,9 +31,10 @@ export class PipeTypesComponent implements OnInit {
 	items!: MenuItem[]
 	activeItem!: MenuItem
 
-	constructor() {}
+	constructor(private primengConfig: PrimeNGConfig) {}
 
 	ngOnInit(): void {
+		this.primengConfig.ripple = true
 		this.items = [
 			{
 				label: 'Basics',
@@ -48,7 +47,7 @@ export class PipeTypesComponent implements OnInit {
 				routerLink: './numbers',
 			},
 			{
-				label: 'Not Commons',
+				label: 'Unusual',
 				icon: 'pi pi-globe',
 				routerLink: './no-commons',
 			},

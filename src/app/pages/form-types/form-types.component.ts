@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { PrimeNGConfig } from 'primeng/api'
 
 @Component({
 	selector: 'app-form-types',
@@ -8,13 +9,17 @@ import { Component, OnInit } from '@angular/core'
 			<router-outlet></router-outlet>
 		</section>
 	`,
-	styles: [`
+	styles: [
+		`
     .container
-      margin-top: -3.5rem
-  `],
+      margin-top: -2.5rem
+  `,
+	],
 })
 export class FormTypesComponent implements OnInit {
-	constructor() {}
+	constructor(private primengConfig: PrimeNGConfig) {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.primengConfig.ripple = true
+	}
 }

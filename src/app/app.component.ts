@@ -3,14 +3,22 @@ import { Component } from '@angular/core'
 @Component({
 	selector: 'app-root',
 	template: `
-		<section class="p-1">
+		<section class="p-3">
 			<div class="mb-3">
 				<app-navbar></app-navbar>
 			</div>
-			<router-outlet></router-outlet>
+			<section class="container">
+				<router-outlet></router-outlet>
+			</section>
 		</section>
 	`,
-	styles: [``],
+	styles: [
+		`
+    .container
+      max-width: 1024px
+      margin: 0 auto
+  `,
+	],
 })
 export class AppComponent {
 	title = 'angular-miscellaneous'

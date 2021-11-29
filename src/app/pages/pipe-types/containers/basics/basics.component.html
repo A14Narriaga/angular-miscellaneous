@@ -1,43 +1,39 @@
 <h3>Basic Pipes - Includes in commun module.</h3>
-<div class="grid">
-	<div class="col-4">
-		<p-card header="uppercase" [subheader]="text">
-			{{ text | uppercase }}
-		</p-card>
+<div class="my-cards">
+	<div class="my-card">
+		<p class="my-card-header">uppercase</p>
+		<p class="my-card-content">{{ text }}</p>
+		<p class="my-card-footer">{{ text | uppercase }}</p>
 	</div>
-	<div class="col-4">
-		<p-card header="lowercase" [subheader]="text">
-			{{ text | lowercase }}
-		</p-card>
+	<div class="my-card">
+		<p class="my-card-header">lowercase</p>
+		<p class="my-card-content">{{ text }}</p>
+		<p class="my-card-footer">{{ text | lowercase }}</p>
 	</div>
-	<div class="col-4">
-		<p-card header="titlecase" [subheader]="text">
-			{{ text | titlecase }}
-		</p-card>
+	<div class="my-card">
+		<p class="my-card-header">titlecase</p>
+		<p class="my-card-content">{{ text }}</p>
+		<p class="my-card-footer">{{ text | titlecase }}</p>
 	</div>
 </div>
-<p>Examples of date pipe.</p>
-<div class="grid">
-	<div class="col-5">
-		<p-card>
-			<ul>
-				<li>today</li>
-				<li>today | date</li>
-				<li>today | date: 'short'</li>
-				<li>today | date: 'MMMM - dd'</li>
-				<li>today | date: 'MMMM dd, yyyy'</li>
-			</ul>
-		</p-card>
+<p class="mb-3">Examples of date pipe.</p>
+<div class="my-cards">
+	<div class="my-card">
+		<ul class="ml-4">
+			<li>today | date</li>
+			<li>today | date: 'short'</li>
+			<li>today | date: 'MMMM - dd'</li>
+			<li>today | date: 'MMMM dd, yyyy'</li>
+			<li>today | date: 'short'</li>
+		</ul>
 	</div>
-	<div class="col-7">
-		<p-card>
-			<ul>
-				<li>{{ today }}</li>
-				<li>{{ today | date }}</li>
-				<li>{{ today | date: 'short' }}</li>
-				<li>{{ today | date: 'MMMM - dd' }}</li>
-				<li>{{ today | date: 'MMMM dd, yyyy' }}</li>
-			</ul>
-		</p-card>
+	<div class="my-card">
+		<ul class="ml-4">
+			<li>{{ today | date }}</li>
+			<li>{{ today | date: 'short' }}</li>
+			<li>{{ today | date: 'MMMM - dd' }}</li>
+			<li>{{ today | date: 'MMMM dd, yyyy' }}</li>
+			<li>{{ today | date: 'long' }}</li>
+		</ul>
 	</div>
 </div>
