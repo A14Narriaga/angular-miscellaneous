@@ -1,27 +1,14 @@
-<section id="sidenav">
-	<h4>Template</h4>
-	<hr />
-	<ul class="list-group">
-		<li
-			*ngFor="let item of menuItems"
-			[routerLink]="item.route"
-			[routerLinkActiveOptions]="{ exact: true }"
-			routerLinkActive="active"
-			class="list-group-item">
-			{{ item.text }}
-		</li>
-	</ul>
-	<br />
-	<h4>Reactive</h4>
-	<hr />
-	<ul class="list-group">
-		<li
-			*ngFor="let item of menuItems2"
-			[routerLink]="item.route"
-			[routerLinkActiveOptions]="{ exact: true }"
-			routerLinkActive="active"
-			class="list-group-item">
-			{{ item.text }}
-		</li>
-	</ul>
+<section>
+	<button
+		#btn
+		class="p-button-text"
+		type="button"
+		pButton
+		icon="pi pi-bars"
+		(click)="menu.toggle($event)"></button>
+	<p-slideMenu
+		#menu
+		[model]="items"
+		[popup]="true"
+		[viewportHeight]="200"></p-slideMenu>
 </section>

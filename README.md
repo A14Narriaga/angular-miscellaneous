@@ -83,6 +83,7 @@ npm i
 ```
 npm install primeng --save
 npm install primeicons --save
+npm install primeflex --save
 ```
 - angular.json
 ```
@@ -90,7 +91,8 @@ npm install primeicons --save
 	"src/styles.sass",
 	"node_modules/primeicons/primeicons.css",
 	"node_modules/primeng/resources/themes/vela-blue/theme.css",
-	"node_modules/primeng/resources/primeng.min.css"
+	"node_modules/primeng/resources/primeng.min.css",
+  "node_modules/primeflex/primeflex.css"
 ],
 ```
 

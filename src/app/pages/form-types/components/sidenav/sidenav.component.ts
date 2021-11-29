@@ -1,45 +1,54 @@
-import { Component } from '@angular/core';
-
-interface MenuItem {
-  text: string;
-  route: string;
-}
+import { Component } from '@angular/core'
+import { MenuItem } from 'primeng/api'
 
 @Component({
-  selector: 'app-sidenav',
-  templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.sass']
+	selector: 'app-sidenav',
+	templateUrl: './sidenav.component.html',
+	styleUrls: ['./sidenav.component.sass'],
 })
 export class SidenavComponent {
-
-  menuItems: MenuItem[] = [
-    {
-      text: 'Basic',
-      route: './template/'
-    },
-    {
-      text: 'Dinamic',
-      route: './template/dinamics'
-    },
-    {
-      text: 'Switches',
-      route: './template/switches'
-    },
-  ]
-
-  menuItems2: MenuItem[] = [
-    {
-      text: 'Basic',
-      route: './reactive/'
-    },
-    {
-      text: 'Dinamic',
-      route: './reactive/dinamics'
-    },
-    {
-      text: 'Switches',
-      route: './reactive/switches'
-    },
-  ]
-
+	items: MenuItem[] = [
+		{
+			label: 'Template',
+			icon: 'pi pi-fw pi-file',
+			items: [
+				{
+					label: 'Basics',
+					icon: 'pi pi-fw pi-plus',
+					routerLink: './template/',
+				},
+				{
+					label: 'Dinamics',
+					icon: 'pi pi-fw pi-plus',
+					routerLink: './template/dinamics',
+				},
+				{
+					label: 'Switches',
+					icon: 'pi pi-fw pi-plus',
+					routerLink: './template/switches',
+				},
+			],
+		},
+		{
+			label: 'Reactive',
+			icon: 'pi pi-fw pi-pencil',
+			items: [
+				{
+					label: 'Basics',
+					icon: 'pi pi-fw pi-plus',
+					routerLink: './reactive/',
+				},
+				{
+					label: 'Dinamics',
+					icon: 'pi pi-fw pi-plus',
+					routerLink: './reactive/dinamics',
+				},
+				{
+					label: 'Switches',
+					icon: 'pi pi-fw pi-plus',
+					routerLink: './reactive/switches',
+				},
+			],
+		},
+	]
 }

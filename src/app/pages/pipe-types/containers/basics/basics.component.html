@@ -1,1 +1,43 @@
-<p>basics works!</p>
+<h3>Basic Pipes - Includes in commun module.</h3>
+<div class="grid">
+	<div class="col-4">
+		<p-card header="uppercase" [subheader]="text">
+			{{ text | uppercase }}
+		</p-card>
+	</div>
+	<div class="col-4">
+		<p-card header="lowercase" [subheader]="text">
+			{{ text | lowercase }}
+		</p-card>
+	</div>
+	<div class="col-4">
+		<p-card header="titlecase" [subheader]="text">
+			{{ text | titlecase }}
+		</p-card>
+	</div>
+</div>
+<p>Examples of date pipe.</p>
+<div class="grid">
+	<div class="col-5">
+		<p-card>
+			<ul>
+				<li>today</li>
+				<li>today | date</li>
+				<li>today | date: 'short'</li>
+				<li>today | date: 'MMMM - dd'</li>
+				<li>today | date: 'MMMM dd, yyyy'</li>
+			</ul>
+		</p-card>
+	</div>
+	<div class="col-7">
+		<p-card>
+			<ul>
+				<li>{{ today }}</li>
+				<li>{{ today | date }}</li>
+				<li>{{ today | date: 'short' }}</li>
+				<li>{{ today | date: 'MMMM - dd' }}</li>
+				<li>{{ today | date: 'MMMM dd, yyyy' }}</li>
+			</ul>
+		</p-card>
+	</div>
+</div>

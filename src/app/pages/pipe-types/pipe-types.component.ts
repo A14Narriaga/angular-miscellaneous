@@ -4,12 +4,30 @@ import { MenuItem } from 'primeng/api'
 @Component({
 	selector: 'app-pipe-types',
 	template: `
-		<p-tabMenu
-			[model]="items"
-			[activeItem]="activeItem"></p-tabMenu>
-		<router-outlet></router-outlet>
+		<div class="wrapper">
+			<p-tabMenu
+				class="options"
+				[model]="items"
+				[activeItem]="activeItem"></p-tabMenu>
+		</div>
+		<section class="container">
+			<router-outlet></router-outlet>
+		</section>
 	`,
-	styleUrls: [],
+	styles: [
+		`
+    .wrapper
+      background-color: var(--surface-a)
+      padding: 0.5rem 0 1rem 0
+      border-radius: 0.3rem
+      .options
+        display: flex
+        justify-content: center
+    .container
+      max-width: 1024px
+      margin: 0 auto
+  `,
+	],
 })
 export class PipeTypesComponent implements OnInit {
 	items!: MenuItem[]

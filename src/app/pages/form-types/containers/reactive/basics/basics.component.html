@@ -1,167 +1,189 @@
 <section>
-  <h5>Reactive</h5>
-  <hr />
-  <form [formGroup]="formGroup" (ngSubmit)="save()">
-    <div class="mb-3">
-      <label for="username" class="form-label">Username</label>
-      <input
-        type="text"
-        id="username"
-        placeholder="Username"
-        class="form-control"
-        formControlName="username"
-        [class.is-invalid]="validField('username')"
-      />
-      <small *ngIf="validField('username')" class="form-text text-danger"
-        >Invalid username.</small
-      >
-    </div>
-    <!-- Name -->
-    <div class="mb-3">
-      <label for="name" class="form-label">Name</label>
-      <input
-        type="text"
-        id="name"
-        placeholder="Name"
-        class="form-control"
-        formControlName="name"
-        [class.is-invalid]="validField('name')"
-      />
-      <small *ngIf="validField('name')" class="form-text text-danger"
-        >Write at least 3 letters.</small
-      >
-    </div>
-    <!-- Address -->
-    <div class="row" formGroupName="address">
-      <div class="col">
-        <!-- Street -->
-        <div class="mb-3">
-          <label for="street" class="form-label">Street</label>
-          <input
-            type="text"
-            id="street"
-            placeholder="Street"
-            class="form-control"
-            formControlName="street"
-            [class.is-invalid]="validField('address.street')"
-          />
-          <small
-            *ngIf="validField('address.street')"
-            class="form-text text-danger"
-            >Write the street.</small
-          >
-        </div>
-      </div>
-      <div class="col">
-        <!-- Number -->
-        <div class="mb-3">
-          <label for="number" class="form-label">Number</label>
-          <input
-            type="number"
-            id="number"
-            placeholder="Number"
-            class="form-control"
-            formControlName="number"
-            [class.is-invalid]="validField('address.number')"
-          />
-          <small
-            *ngIf="validField('address.number')"
-            class="form-text text-danger"
-            >Write the number.</small
-          >
-        </div>
-      </div>
-    </div>
-    <!-- Email -->
-    <div class="mb-3">
-      <label for="email" class="form-label">Email</label>
-      <input
-        type="email"
-        id="email"
-        placeholder="example@example.com"
-        class="form-control"
-        formControlName="email"
-        [class.is-invalid]="validField('email')"
-      />
-      <small *ngIf="validField('email')" class="form-text text-danger"
-        >The email is required.</small
-      >
-    </div>
-    <!-- Hobbies -->
-    <section>
-      <table class="table table-striped table-hover">
-        <thead class="table-dark">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Hobbie</th>
-            <th scope="col">Actions</th>
-          </tr>
-        </thead>
-        <tbody formArrayName="hobbies">
-          <tr *ngFor="let hobbie of hobbies.controls; let i = index">
-            <th scope="row">{{ i + 1 }}</th>
-            <td>
-              <input class="form-control" type="text" [formControlName]="i" />
-            </td>
-            <td>
-              <button
-                class="btn btn-danger"
-                type="submit"
-                (click)="deleteHobbie(i)"
-              >
-                Delete
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="d-grid gap-2 mb-3">
-        <button class="btn btn-secondary" type="button" (click)="addHobbie()">
-          Add
-        </button>
-      </div>
-    </section>
-    <!-- Password -->
-    <div class="row">
-      <div class="col">
-        <!-- Password -->
-        <div class="mb-3">
-          <label for="pass1" class="form-label">Password</label>
-          <input
-            type="password"
-            id="pass1"
-            placeholder="password"
-            class="form-control"
-            formControlName="pass1"
-            [class.is-invalid]="validField('pass1')"
-          />
-        </div>
-      </div>
-      <div class="col">
-        <!-- RepeatPassword -->
-        <div class="mb-3">
-          <label for="pass2" class="form-label">Password confirmation</label>
-          <input
-            type="password"
-            id="pass2"
-            placeholder="password confirmation"
-            class="form-control"
-            formControlName="pass2"
-            [class.is-invalid]="validField('pass2')"
-          />
-        </div>
-      </div>
-    </div>
-    <!-- Country -->
-    <!-- <div class="mb-3">
+	<h3>Reactive - Basics</h3>
+	<hr />
+	<form [formGroup]="formGroup" (ngSubmit)="save()">
+		<div class="mb-3">
+			<label for="username" class="form-label">
+				Username
+			</label>
+			<input
+				type="text"
+				id="username"
+				placeholder="Username"
+				class="form-control"
+				formControlName="username"
+				[class.is-invalid]="validField('username')" />
+			<small
+				*ngIf="validField('username')"
+				class="form-text text-danger">
+				Invalid username.
+			</small>
+		</div>
+		<!-- Name -->
+		<div class="mb-3">
+			<label for="name" class="form-label">Name</label>
+			<input
+				type="text"
+				id="name"
+				placeholder="Name"
+				class="form-control"
+				formControlName="name"
+				[class.is-invalid]="validField('name')" />
+			<small
+				*ngIf="validField('name')"
+				class="form-text text-danger">
+				Write at least 3 letters.
+			</small>
+		</div>
+		<!-- Address -->
+		<div class="row" formGroupName="address">
+			<div class="col">
+				<!-- Street -->
+				<div class="mb-3">
+					<label for="street" class="form-label">
+						Street
+					</label>
+					<input
+						type="text"
+						id="street"
+						placeholder="Street"
+						class="form-control"
+						formControlName="street"
+						[class.is-invalid]="
+							validField('address.street')
+						" />
+					<small
+						*ngIf="validField('address.street')"
+						class="form-text text-danger">
+						Write the street.
+					</small>
+				</div>
+			</div>
+			<div class="col">
+				<!-- Number -->
+				<div class="mb-3">
+					<label for="number" class="form-label">
+						Number
+					</label>
+					<input
+						type="number"
+						id="number"
+						placeholder="Number"
+						class="form-control"
+						formControlName="number"
+						[class.is-invalid]="
+							validField('address.number')
+						" />
+					<small
+						*ngIf="validField('address.number')"
+						class="form-text text-danger">
+						Write the number.
+					</small>
+				</div>
+			</div>
+		</div>
+		<!-- Email -->
+		<div class="mb-3">
+			<label for="email" class="form-label">Email</label>
+			<input
+				type="email"
+				id="email"
+				placeholder="example@example.com"
+				class="form-control"
+				formControlName="email"
+				[class.is-invalid]="validField('email')" />
+			<small
+				*ngIf="validField('email')"
+				class="form-text text-danger">
+				The email is required.
+			</small>
+		</div>
+		<!-- Hobbies -->
+		<section>
+			<table class="table table-striped table-hover">
+				<thead class="table-dark">
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Hobbie</th>
+						<th scope="col">Actions</th>
+					</tr>
+				</thead>
+				<tbody formArrayName="hobbies">
+					<tr
+						*ngFor="
+							let hobbie of hobbies.controls;
+							let i = index
+						">
+						<th scope="row">{{ i + 1 }}</th>
+						<td>
+							<input
+								class="form-control"
+								type="text"
+								[formControlName]="i" />
+						</td>
+						<td>
+							<button
+								class="btn btn-danger"
+								type="submit"
+								(click)="deleteHobbie(i)">
+								Delete
+							</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="d-grid gap-2 mb-3">
+				<button
+					class="btn btn-secondary"
+					type="button"
+					(click)="addHobbie()">
+					Add
+				</button>
+			</div>
+		</section>
+		<!-- Password -->
+		<div class="row">
+			<div class="col">
+				<!-- Password -->
+				<div class="mb-3">
+					<label for="pass1" class="form-label">
+						Password
+					</label>
+					<input
+						type="password"
+						id="pass1"
+						placeholder="password"
+						class="form-control"
+						formControlName="pass1"
+						[class.is-invalid]="validField('pass1')" />
+				</div>
+			</div>
+			<div class="col">
+				<!-- RepeatPassword -->
+				<div class="mb-3">
+					<label for="pass2" class="form-label">
+						Password confirmation
+					</label>
+					<input
+						type="password"
+						id="pass2"
+						placeholder="password confirmation"
+						class="form-control"
+						formControlName="pass2"
+						[class.is-invalid]="validField('pass2')" />
+				</div>
+			</div>
+		</div>
+		<!-- Country -->
+		<!-- <div class="mb-3">
     <label for="countries" class="form-label">Country</label>
     <select class="form-control" id="countries">
       <option></option>
     </select>
     <small class="form-text text-danger">Select a country.</small>
   </div> -->
-    <!-- Radio -->
-    <!-- <div class="mb-3 row">
+		<!-- Radio -->
+		<!-- <div class="mb-3 row">
     <label for="countries" class="form-label">Gender</label>
     <div class="col">
       <div class="form-check form-check-inline">
@@ -174,29 +196,38 @@
       </div>
     </div>
   </div> -->
-    <!-- Buttons -->
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-4">
-      <button (click)="check()" class="btn btn-warning" type="button">
-        Check
-      </button>
-      <button
-        [disabled]="this.formGroup.status !== 'VALID'"
-        class="btn btn-primary"
-        type="submit"
-      >
-        Save
-      </button>
-    </div>
-  </form>
+		<!-- Buttons -->
+		<div
+			class="
+				d-grid
+				gap-2
+				d-md-flex
+				justify-content-md-end
+				mb-4
+			">
+			<button
+				(click)="check()"
+				class="btn btn-warning"
+				type="button">
+				Check
+			</button>
+			<button
+				[disabled]="this.formGroup.status !== 'VALID'"
+				class="btn btn-primary"
+				type="submit">
+				Save
+			</button>
+		</div>
+	</form>
 
-  <hr />
-  <pre>
+	<hr />
+	<pre>
   Valid: {{ formGroup.valid }}
   Satus: {{ formGroup.status }}
 </pre
-  >
-  <pre>
+	>
+	<pre>
   {{ formGroup.value | json }}
 </pre
-  >
+	>
 </section>

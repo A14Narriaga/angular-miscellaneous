@@ -3,14 +3,15 @@ import { Component, OnInit } from '@angular/core'
 @Component({
 	selector: 'app-form-types',
 	template: `
-		<section class="d-flex">
-			<app-sidenav></app-sidenav>
-			<div class="container p-4">
-				<router-outlet></router-outlet>
-			</div>
+		<app-sidenav></app-sidenav>
+		<section class="container">
+			<router-outlet></router-outlet>
 		</section>
 	`,
-	styleUrls: [],
+	styles: [`
+    .container
+      margin-top: -3.5rem
+  `],
 })
 export class FormTypesComponent implements OnInit {
 	constructor() {}
