@@ -1,0 +1,110 @@
+<h3>Unusual Pipes - Includes in commun module.</h3>
+<div class="my-grid">
+	<div class="my-card">
+		<div class="my-card-header mb-3">i18nSelect</div>
+		<div class="my-card-content mb-3">
+			Saludos {{ gender === 'M' ? 'Alan' : 'Pamela' }}, es
+			un placer {{ gender | i18nSelect: genderMap }} a
+			nuestro evento.
+		</div>
+		<div class="my-card-footer">
+			<button
+				pButton
+				pRipple
+				type="button"
+				label="Male"
+				(click)="gender = 'M'"
+				class="
+					p-button-rounded p-button-text
+					mr-2
+				"></button>
+			<button
+				pButton
+				pRipple
+				type="button"
+				label="Female"
+				(click)="gender = 'F'"
+				class="p-button-rounded p-button-text"></button>
+		</div>
+	</div>
+	<div class="my-card">
+		<div class="my-card-header mb-3">i18nPlural</div>
+		<div class="my-card-content mb-3">
+			Por favor espere, actualmente
+			{{ clients | i18nPlural: clientsMap }}
+			esperando.
+		</div>
+		<div class="my-card-footer">
+			<button
+				pButton
+				pRipple
+				type="button"
+				icon="pi pi-minus"
+				[disabled]="clients === 0"
+				(click)="clients = clients - 1"
+				class="
+					p-button-rounded p-button-text
+					mr-2
+				"></button>
+			<button
+				pButton
+				pRipple
+				type="button"
+				icon="pi pi-plus"
+				(click)="clients = clients + 1"
+				class="p-button-rounded p-button-text"></button>
+		</div>
+	</div>
+	<div class="my-card">
+		<div class="my-card-header mb-3">keyvalue</div>
+		<div class="my-card-content mb-3">
+			<ul class="ml-3">
+				<li *ngFor="let item of person | keyvalue">
+					<b>{{ item.key | titlecase }}:</b>
+					{{ item.value }}
+				</li>
+			</ul>
+		</div>
+		<div class="my-card-footer"></div>
+	</div>
+	<div class="my-card">
+		<div class="my-card-header mb-3">slice</div>
+		<div class="my-card-content mb-3">
+			slice: 0
+			<pre>{{ things | slice: 0 }}</pre>
+			slice: 0:2
+			<pre>{{ things | slice: 0:2 }}</pre>
+			slice: 1:2
+			<pre>{{ things | slice: 1:2 }}</pre>
+			slice: 3:3
+			<pre>{{ things | slice: 3:3 }}</pre>
+			slice: 0:4
+			<pre>{{ things | slice: 0:4 }}</pre>
+		</div>
+		<div class="my-card-footer"></div>
+	</div>
+	<div class="my-card">
+		<div class="my-card-header mb-3">json</div>
+		<div class="my-card-content mb-3">
+			<pre>{{ person | json }}</pre>
+		</div>
+		<div class="my-card-footer"></div>
+	</div>
+	<div class="my-card">
+		<div class="my-card-header mb-3">async</div>
+		<div class="my-card-content mb-3">
+			<p>
+				<b>Interval:</b>
+				{{ observable | async }}
+			</p>
+			<p>
+				<b>Promise:</b>
+				<span *ngIf="!(promise | async)"> Loading...</span>
+				<span>
+					{{ promise | async }}
+				</span>
+			</p>
+		</div>
+		<div class="my-card-footer"></div>
+	</div>
+</div>

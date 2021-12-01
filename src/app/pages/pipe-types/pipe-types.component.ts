@@ -49,7 +49,7 @@ export class PipeTypesComponent implements OnInit {
 			{
 				label: 'Unusual',
 				icon: 'pi pi-globe',
-				routerLink: './no-commons',
+				routerLink: './unusual',
 			},
 			{
 				label: 'Customs',

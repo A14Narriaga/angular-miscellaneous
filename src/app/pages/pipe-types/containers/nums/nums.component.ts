@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-nums',
   templateUrl: './nums.component.html',
   styleUrls: ['./nums.component.sass']
 })
-export class NumsComponent implements OnInit {
+export class NumsComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  num: number = 456789.5525;
+  percentage: number = 0.4856;
 
 }

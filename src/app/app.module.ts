@@ -8,16 +8,20 @@ import { SharedModule } from './shared/shared.module'
 
 import { HttpClientModule } from '@angular/common/http'
 
+import { registerLocaleData } from '@angular/common'
+import localEs from '@angular/common/locales/es-MX'
+registerLocaleData(localEs)
+
 @NgModule({
-	declarations: [AppComponent],
-	imports: [
-		BrowserModule,
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
     BrowserAnimationsModule,
-		AppRoutingModule,
-		SharedModule,
-		HttpClientModule,
-	],
-	providers: [],
-	bootstrap: [AppComponent],
+    AppRoutingModule,
+    SharedModule,
+    HttpClientModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

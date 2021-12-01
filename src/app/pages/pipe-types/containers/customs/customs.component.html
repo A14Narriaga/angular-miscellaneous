@@ -1,1 +1,8 @@
-<p>customs works!</p>
+<h3>Custom Pipes</h3>
+<div class="my-grid">
+	<app-card
+		*ngFor="let hero of heros"
+		[title]="hero.name"
+		[colorId]="hero.colorId"
+		[urlVideo]="hero.urlVideo"></app-card>
+</div>

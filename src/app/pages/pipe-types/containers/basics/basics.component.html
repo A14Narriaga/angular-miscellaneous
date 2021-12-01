@@ -1,5 +1,5 @@
 <h3>Basic Pipes - Includes in commun module.</h3>
-<div class="my-cards">
+<div class="my-grid">
 	<div class="my-card">
 		<p class="my-card-header">uppercase</p>
 		<p class="my-card-content">{{ text }}</p>
@@ -17,14 +17,15 @@
 	</div>
 </div>
 <p class="mb-3">Examples of date pipe.</p>
-<div class="my-cards">
+<div class="my-grid">
 	<div class="my-card">
 		<ul class="ml-4">
 			<li>today | date</li>
 			<li>today | date: 'short'</li>
 			<li>today | date: 'MMMM - dd'</li>
 			<li>today | date: 'MMMM dd, yyyy'</li>
-			<li>today | date: 'short'</li>
+			<li>today | date: 'short':'GMT-5'</li>
+			<li>today | date: 'MMMM - dd':'':'es-MX'</li>
 		</ul>
 	</div>
 	<div class="my-card">
@@ -33,7 +34,12 @@
 			<li>{{ today | date: 'short' }}</li>
 			<li>{{ today | date: 'MMMM - dd' }}</li>
 			<li>{{ today | date: 'MMMM dd, yyyy' }}</li>
-			<li>{{ today | date: 'long' }}</li>
+			<li>{{ today | date: 'short':'GMT-5' }}</li>
+			<li>
+				{{
+					today | date: 'MMMM - dd':'':'es-MX' | titlecase
+				}}
+			</li>
 		</ul>
 	</div>
 </div>

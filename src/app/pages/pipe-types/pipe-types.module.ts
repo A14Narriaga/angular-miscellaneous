@@ -7,20 +7,26 @@ import { PrimeNGModule } from '../../prime-ng.module'
 import { BasicsComponent } from './containers/basics/basics.component'
 import { CustomsComponent } from './containers/customs/customs.component'
 import { NumsComponent } from './containers/nums/nums.component'
-import { NoCommonsComponent } from './containers/no-commons/no-commons.component'
+import { CardComponent } from './components/card/card.component';
+import { ColorPipe } from './pipes/color.pipe';
+import { SecureDomPipe } from './pipes/secure-dom.pipe';
+import { UnusualComponent } from './containers/unusual/unusual.component';
 
 @NgModule({
-	declarations: [
-		PipeTypesComponent,
-		BasicsComponent,
-		CustomsComponent,
-		NumsComponent,
-		NoCommonsComponent,
-	],
-	imports: [
-		CommonModule,
-		PipeTypesRoutingModule,
-		PrimeNGModule,
-	],
+  declarations: [
+    PipeTypesComponent,
+    BasicsComponent,
+    CustomsComponent,
+    NumsComponent,
+    UnusualComponent,
+    CardComponent,
+    ColorPipe,
+    SecureDomPipe,
+  ],
+  imports: [
+    CommonModule,
+    PipeTypesRoutingModule,
+    PrimeNGModule,
+  ],
 })
-export class PipeTypesModule {}
+export class PipeTypesModule { }

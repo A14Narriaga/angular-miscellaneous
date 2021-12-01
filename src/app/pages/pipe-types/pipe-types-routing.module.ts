@@ -3,40 +3,40 @@ import { RouterModule, Routes } from '@angular/router'
 import { PipeTypesComponent } from './pipe-types.component'
 import { BasicsComponent } from './containers/basics/basics.component';
 import { NumsComponent } from './containers/nums/nums.component';
-import { NoCommonsComponent } from './containers/no-commons/no-commons.component';
+import { UnusualComponent } from './containers/unusual/unusual.component';
 import { CustomsComponent } from './containers/customs/customs.component';
 
 const routes: Routes = [
-	{
-		path: '',
-		component: PipeTypesComponent,
-		children: [
-			{
-				path: '',
-				component: BasicsComponent,
-			},
-			{
-				path: 'numbers',
-				component: NumsComponent,
-			},
+  {
+    path: '',
+    component: PipeTypesComponent,
+    children: [
       {
-				path: 'no-commons',
-				component: NoCommonsComponent,
-			},
+        path: '',
+        component: BasicsComponent,
+      },
       {
-				path: 'customs',
-				component: CustomsComponent,
-			},
-			{
-				path: '**',
-				redirectTo: '',
-			},
-		],
-	},
+        path: 'numbers',
+        component: NumsComponent,
+      },
+      {
+        path: 'unusual',
+        component: UnusualComponent,
+      },
+      {
+        path: 'customs',
+        component: CustomsComponent,
+      },
+      {
+        path: '**',
+        redirectTo: '',
+      },
+    ],
+  },
 ]
 
 @NgModule({
-	imports: [RouterModule.forChild(routes)],
-	exports: [RouterModule],
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
-export class PipeTypesRoutingModule {}
+export class PipeTypesRoutingModule { }
