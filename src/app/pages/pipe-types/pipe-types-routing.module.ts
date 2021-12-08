@@ -12,7 +12,7 @@ const routes: Routes = [
     component: PipeTypesComponent,
     children: [
       {
-        path: '',
+        path: 'basics',
         component: BasicsComponent,
       },
       {
@@ -29,7 +29,7 @@ const routes: Routes = [
       },
       {
         path: '**',
-        redirectTo: '',
+        redirectTo: 'basics',
       },
     ],
   },

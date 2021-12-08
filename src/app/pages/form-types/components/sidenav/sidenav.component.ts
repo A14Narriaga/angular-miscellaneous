@@ -1,5 +1,4 @@
 import { Component } from '@angular/core'
-import { MenuItem } from 'primeng/api'
 
 @Component({
 	selector: 'app-sidenav',
@@ -7,7 +6,7 @@ import { MenuItem } from 'primeng/api'
 	styleUrls: ['./sidenav.component.sass'],
 })
 export class SidenavComponent {
-	items: MenuItem[] = [
+	items = [
 		{
 			label: 'Template',
 			icon: 'pi pi-fw pi-file',

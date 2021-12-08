@@ -1,62 +1,37 @@
 import { Component, OnInit } from '@angular/core'
-import { MenuItem } from 'primeng/api'
-import { PrimeNGConfig } from 'primeng/api'
 
 @Component({
 	selector: 'app-pipe-types',
 	template: `
-		<div class="wrapper mb-3">
-			<p-tabMenu
-				[model]="items"
-				[activeItem]="activeItem"></p-tabMenu>
-		</div>
+		<section class="wrapper">
+			<a routerLinkActive="active" routerLink="basics">
+				Basics
+			</a>
+			<a routerLinkActive="active" routerLink="numbers">
+				Numbers
+			</a>
+			<a routerLinkActive="active" routerLink="unusual">
+				Unusual
+			</a>
+			<a routerLinkActive="active" routerLink="customs">
+				Customs
+			</a>
+		</section>
 		<router-outlet></router-outlet>
 	`,
 	styles: [
 		`
     .wrapper
-      background-color: var(--surface-a)
-      padding: 0.5rem 0 1rem 0
-      border-radius: 0.3rem
       display: flex
       justify-content: center
       align-items: center
-      overflow-x: scroll
-      &::-webkit-scrollbar
-        display: none
+      margin-bottom: 1rem
+      a
+        padding: 0 0.5rem
+      .active
+        border-bottom: 2px solid gray
+        font-weight: 500
   `,
 	],
 })
-export class PipeTypesComponent implements OnInit {
-	items!: MenuItem[]
-	activeItem!: MenuItem
-
-	constructor(private primengConfig: PrimeNGConfig) {}
-
-	ngOnInit(): void {
-		this.primengConfig.ripple = true
-		this.items = [
-			{
-				label: 'Basics',
-				icon: 'pi pi-align-left',
-				routerLink: './',
-			},
-			{
-				label: 'Numbers',
-				icon: 'pi pi-dollar',
-				routerLink: './numbers',
-			},
-			{
-				label: 'Unusual',
-				icon: 'pi pi-globe',
-				routerLink: './unusual',
-			},
-			{
-				label: 'Customs',
-				icon: 'pi pi-cog',
-				routerLink: './customs',
-			},
-		]
-		this.activeItem = this.items[0]
-	}
-}
+export class PipeTypesComponent {}

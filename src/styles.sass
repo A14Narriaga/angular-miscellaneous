@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600&display=swap')
+
 *
   padding: 0
   border: 0
@@ -5,31 +7,40 @@
   box-sizing: border-box
 
 body
-  background-color: var(--surface-b)
-  font-family: var(--font-family)
+  background-color: #00181f
+  font-family: 'Baloo 2', cursive
   color: #b9b9b9
-  hr
-    border: 0.5px solid #b9b9b9
-    margin-bottom: 1rem
-  h3
-    margin-bottom: 1rem
+  margin: 0 auto
+  width: 1024px
 
-.my-card
+a
+  text-decoration: none
+  color: #b9b9b9
+
+ul
+  list-style: none
+
+.card
   width: 100%
-  background-color: var(--surface-a)
+  background-color: #003b49c4
   padding: 1rem
   border-radius: 0.3rem
-  .my-card-header
+  .card-header
     font-weight: bold
     font-size: 1.2rem
-  .my-card-content
+  .card-content
     color: gray
     margin-left: 1rem
-  .my-card-footer
+  .card-footer
     margin-left: 1rem
 
-.my-grid
+.grid
   display: grid
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
   grid-gap: 1rem
   margin-bottom: 1rem
+
+.scroll
+  overflow-x: scroll
+  &::-webkit-scrollbar
+    display: none

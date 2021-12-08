@@ -1,8 +1,12 @@
-<p-menubar [model]="items">
-	<ng-template pTemplate="start">
-		<div class="title">
-			<i class="fab fa-angular"></i>
-			Miscellaneous
-		</div>
-	</ng-template>
-</p-menubar>
+<section>
+	<div class="title">
+		<i class="fab fa-angular"></i>
+		Miscellaneous
+	</div>
+	<a routerLinkActive="active" [routerLink]="['forms']">
+		Forms
+	</a>
+	<a routerLinkActive="active" [routerLink]="['pipes']">
+		Pipes
+	</a>
+</section>

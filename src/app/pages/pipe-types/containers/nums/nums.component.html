@@ -1,44 +1,44 @@
 <h3>Numbers Pipes - Includes in commun module.</h3>
-<p class="mb-3">Number</p>
-<div class="my-grid">
-	<div class="my-card">
-		<p class="my-card-header">number</p>
-		<p class="my-card-content">{{ num }}</p>
-		<p class="my-card-footer">{{ num | number }}</p>
+<p>Number</p>
+<div class="grid">
+	<div class="card">
+		<p class="card-header">number</p>
+		<p class="card-content">{{ num }}</p>
+		<p class="card-footer">{{ num | number }}</p>
 	</div>
-	<div class="my-card">
-		<p class="my-card-header">number: '1.1-1'</p>
-		<p class="my-card-content">{{ num }}</p>
-		<p class="my-card-footer">
+	<div class="card">
+		<p class="card-header">number: '1.1-1'</p>
+		<p class="card-content">{{ num }}</p>
+		<p class="card-footer">
 			{{ num | number: '1.1-1' }}
 		</p>
 	</div>
 </div>
-<p class="mb-3">Currency</p>
-<div class="my-grid">
-	<div class="my-card">
-		<p class="my-card-header">currency</p>
-		<p class="my-card-content">{{ num }}</p>
-		<p class="my-card-footer">{{ num | currency }}</p>
+<p>Currency</p>
+<div class="grid">
+	<div class="card">
+		<p class="card-header">currency</p>
+		<p class="card-content">{{ num }}</p>
+		<p class="card-footer">{{ num | currency }}</p>
 	</div>
-	<div class="my-card">
-		<p class="my-card-header">currency:'BTS '</p>
-		<p class="my-card-content">{{ num }}</p>
-		<p class="my-card-footer">
+	<div class="card">
+		<p class="card-header">currency:'BTS '</p>
+		<p class="card-content">{{ num }}</p>
+		<p class="card-footer">
 			{{ num | currency: 'BTS ' }}
 		</p>
 	</div>
 </div>
-<p class="mb-3">Percent</p>
-<div class="my-grid">
-	<div class="my-card">
-		<p class="my-card-header">percent</p>
-		<p class="my-card-content">{{ percentage }}</p>
-		<p class="my-card-footer">{{ percentage | percent }}</p>
+<p>Percent</p>
+<div class="grid">
+	<div class="card">
+		<p class="card-header">percent</p>
+		<p class="card-content">{{ percentage }}</p>
+		<p class="card-footer">{{ percentage | percent }}</p>
 	</div>
-	<div class="my-card">
-		<p class="my-card-header">percent</p>
-		<p class="my-card-content">{{ percentage }}</p>
-		<p class="my-card-footer">{{ percentage | percent:'1.2-2' }}</p>
+	<div class="card">
+		<p class="card-header">percent</p>
+		<p class="card-content">{{ percentage }}</p>
+		<p class="card-footer">{{ percentage | percent:'1.2-2' }}</p>
 	</div>
 </div>

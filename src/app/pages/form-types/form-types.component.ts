@@ -1,25 +1,18 @@
 import { Component, OnInit } from '@angular/core'
-import { PrimeNGConfig } from 'primeng/api'
 
 @Component({
-	selector: 'app-form-types',
-	template: `
+  selector: 'app-form-types',
+  template: `
 		<app-sidenav></app-sidenav>
 		<section class="container">
 			<router-outlet></router-outlet>
 		</section>
 	`,
-	styles: [
-		`
-    .container
-      margin-top: -2.5rem
-  `,
-	],
+  styles: [``],
 })
 export class FormTypesComponent implements OnInit {
-	constructor(private primengConfig: PrimeNGConfig) {}
+  constructor() { }
 
-	ngOnInit(): void {
-		this.primengConfig.ripple = true
-	}
+  ngOnInit(): void {
+  }
 }
