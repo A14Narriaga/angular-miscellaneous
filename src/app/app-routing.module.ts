@@ -5,14 +5,14 @@ const routes: Routes = [
 	{
 		path: 'forms',
 		loadChildren: () =>
-			import('./pages/form-types/form-types.module').then(
+			import('./containers/form-types/form-types.module').then(
 				(m) => m.FormTypesModule
 			),
 	},
 	{
 		path: 'pipes',
 		loadChildren: () =>
-			import('./pages/pipe-types/pipe-types.module').then(
+			import('./containers/pipe-types/pipe-types.module').then(
 				(m) => m.PipeTypesModule
 			),
 	},

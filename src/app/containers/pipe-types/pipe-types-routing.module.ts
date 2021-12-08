@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { PipeTypesComponent } from './pipe-types.component'
-import { BasicsComponent } from './containers/basics/basics.component';
-import { NumsComponent } from './containers/nums/nums.component';
-import { UnusualComponent } from './containers/unusual/unusual.component';
-import { CustomsComponent } from './containers/customs/customs.component';
+import { BasicsComponent } from './pages/basics/basics.component';
+import { NumsComponent } from './pages/nums/nums.component';
+import { UnusualComponent } from './pages/unusual/unusual.component';
+import { CustomsComponent } from './pages/customs/customs.component';
 
 const routes: Routes = [
   {

@@ -11,14 +11,14 @@ const routes: Routes = [
 				path: 'template',
 				loadChildren: () =>
 					import(
-						'./containers/template/template.module'
+						'./pages/template/template.module'
 					).then((m) => m.TemplateModule),
 			},
 			{
 				path: 'reactive',
 				loadChildren: () =>
 					import(
-						'./containers/reactive/reactive.module'
+						'./pages/reactive/reactive.module'
 					).then((m) => m.ReactiveModule),
 			},
 			{
