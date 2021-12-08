@@ -1,24 +1,30 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
+import { LoginComponent } from './auth/login/login.component'
+import { Page404Component } from './shared/page404/page404.component'
 
 const routes: Routes = [
 	{
-		path: 'forms',
+		path: 'auth',
 		loadChildren: () =>
-			import('./containers/form-types/form-types.module').then(
-				(m) => m.FormTypesModule
+			import('./auth/auth.module').then(
+				(m) => m.AuthModule
 			),
 	},
 	{
-		path: 'pipes',
+		path: 'app',
 		loadChildren: () =>
-			import('./containers/pipe-types/pipe-types.module').then(
-				(m) => m.PipeTypesModule
+			import('./containers/containers.module').then(
+				(m) => m.ContainersModule
 			),
+	},
+	{
+		path: '404',
+		component: Page404Component,
 	},
 	{
 		path: '**',
-		redirectTo: 'forms',
+		redirectTo: '404',
 	},
 ]
 
