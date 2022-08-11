@@ -3,11 +3,18 @@
 		<i class="fab fa-angular"></i>
 		Miscellaneous
 	</div>
-	<a routerLinkActive="active" [routerLink]="['forms']">
-		Forms
-	</a>
-	<a routerLinkActive="active" [routerLink]="['pipes']">
-		Pipes
-	</a>
-	<a (click)="logout()">Logout</a>
+	<div class="pages">
+		<a routerLinkActive="active" [routerLink]="['forms']">
+			Forms
+		</a>
+		<a routerLinkActive="active" [routerLink]="['pipes']">
+			Pipes
+		</a>
+		<a
+			routerLinkActive="active"
+			[routerLink]="['life-cycles']">
+			LifeCycles
+		</a>
+	</div>
+	<!-- <a (click)="logout()">Logout</a> -->
 </section>
